@@ -7,6 +7,14 @@ public abstract class Vehiculo {
     private String espacio;
     private double horasEstimadas;
 
+    public Vehiculo(String modelo, String marca, String patente, String espacio, double horasEstimadas) {
+        this.modelo = modelo;
+        this.marca = marca;
+        this.patente = patente;
+        this.espacio = espacio;
+        this.horasEstimadas = horasEstimadas;
+    }
+
     public String getMarca() {
         return marca;
     }
