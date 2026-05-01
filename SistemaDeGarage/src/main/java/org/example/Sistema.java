@@ -54,4 +54,20 @@ public class Sistema {
         System.out.println("Vehiculo ingresado con exito ");
     }
 
-}
+    public void  egresoVehiculo(Vehiculo vehiculo) throws VehiculoNoEncontradoException {
+
+        if (!listaVehiculos.contains(vehiculo)) {
+            throw new VehiculoNoEncontradoException("El vehículo con patente " + vehiculo.getPatente() + " no está en el garage.");
+        }
+          listaVehiculos.remove(vehiculo);
+        System.out.println("Vehiculo egresado con exito ");
+      }
+    public void estadoGarage(){
+        System.out.println("\n Estado Actual Del Garage");
+        System.out.println("Capacidad total: " + capacidadMaxima);
+        System.out.println("Espacio Ocupado: " + getEspacioTotalOcupado());
+        System.out.println("Espacio Disponible: " + getEspacioDisponible());
+        System.out.println("Cantidad de Vehiculos: " + listaVehiculos.size());
+    }
+    }
+
