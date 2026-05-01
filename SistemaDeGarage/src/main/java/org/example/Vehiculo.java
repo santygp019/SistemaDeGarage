@@ -7,7 +7,7 @@ public abstract class Vehiculo {
     private String espacio;
     private double horasEstimadas;
 
-    public Vehiculo(String modelo, String marca, String patente, String espacio, double horasEstimadas) {
+    public Vehiculo(String modelo, String marca, String patente, double horasEstimadas) {
         this.modelo = modelo;
         this.marca = marca;
         this.patente = patente;
@@ -19,32 +19,16 @@ public abstract class Vehiculo {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public String getModelo() {
         return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
     }
 
     public String getPatente() {
         return patente;
     }
 
-    public void setPatente(String patente) {
-        this.patente = patente;
-    }
-
     public String getEspacio() {
         return espacio;
-    }
-
-    public void setEspacio(String espacio) {
-        this.espacio = espacio;
     }
 
     public double getHorasEstimadas() {
@@ -58,6 +42,20 @@ public abstract class Vehiculo {
     public abstract double calcularCosto();
 
     public abstract int getEspacioOcupado();
+
+    public abstract String getTipoVehiculo();
+
+    public abstract double calcularTarifa();
+
+    public void mostrarinfo(){
+        System.out.println("Tipo: " + getTipoVehiculo());
+        System.out.println("Patente: " + getPatente());
+        System.out.println("Marca: " + getMarca());
+        System.out.println("Modelo " + getModelo());
+        System.out.println("Horas Estimadas: " + horasEstimadas);
+        System.out.println("Espacio ocupado: " + getEspacio());
+        System.out.println("Total a pagar" + calcularTarifa());
+    }
 
 
 }

@@ -2,9 +2,10 @@ package org.example;
 
 public class Auto extends Vehiculo {
 
-    public Auto(String modelo, String marca, String patente, String espacio, double horasEstimadas) {
-        super(modelo, marca, patente, espacio, horasEstimadas);
+    public Auto(String modelo, String marca, String patente,double horasEstimadas) {
+        super(modelo, marca, patente, horasEstimadas);
     }
+
 
     @Override
     public double calcularCosto() {
@@ -15,5 +16,15 @@ public class Auto extends Vehiculo {
     public int getEspacioOcupado() {
         return 2;
 
+    }
+
+    @Override
+    public String getTipoVehiculo() {
+        return "Auto";
+    }
+
+    @Override
+    public double calcularTarifa() {
+        return getHorasEstimadas() * calcularCosto();
     }
 }
