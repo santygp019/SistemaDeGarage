@@ -1,4 +1,4 @@
 package org.example;
 
-public class Camion extends Vehiculo{
+public class Camion extends Vehiculo {
 }

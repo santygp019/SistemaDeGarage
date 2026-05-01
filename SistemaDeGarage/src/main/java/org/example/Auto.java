@@ -1,4 +1,4 @@
 package org.example;
 
-public class Auto extends Vehiculo{
+public class Auto extends Vehiculo {
 }
