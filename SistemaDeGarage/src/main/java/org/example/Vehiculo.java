@@ -51,6 +51,5 @@ public abstract class Vehiculo {
 
     public abstract int getEspacioOcupado();
 
-    public abstract int setEspacioOcupado();
 
 }
