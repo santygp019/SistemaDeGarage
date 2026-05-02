@@ -43,7 +43,7 @@ public class Main {
                         int horas = Integer.parseInt(scanner.nextLine());
 
                         Vehiculo nuevoVehiculo = null;
-                        if (tipoVe.equals(1)){
+                        if (tipoVe.equals("1")){
                             nuevoVehiculo = new Auto(modelo, marca, patente, horas);
                         }else if (tipoVe.equals("2")) {
                             nuevoVehiculo = new Moto(modelo, marca, patente, horas);
@@ -51,6 +51,9 @@ public class Main {
                             nuevoVehiculo = new Camion(modelo, marca, patente, horas);
                         }else {
                             System.out.println("Tipo de Vehiculo Invalido.");
+                        }
+                        if (nuevoVehiculo != null){
+                            garage.ingresarVehiculo(nuevoVehiculo);
                         }
                         break;
 

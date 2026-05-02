@@ -63,12 +63,12 @@ public class Garage {
         if (vehiculo == null) {
             throw new VehiculoNoEncontradoException("El vehículo con patente " + patente + " no está en el garage.");
         }
-
-          listaVehiculos.remove(vehiculo);
-        System.out.println("Resumen de salida");
-        vehiculo.mostrarInfo();
-        System.out.println("Vehiculo egresado con exito ");
-
+        else {
+            listaVehiculos.remove(vehiculo);
+            System.out.println("Resumen de salida");
+            vehiculo.mostrarInfo();
+            System.out.println("Vehiculo egresado con exito ");
+        }
       }
 
       public void listarVehiculos(){
