@@ -24,10 +24,15 @@ public class Main {
                 opcion = Integer.parseInt(scanner.nextLine());
 
                 switch (opcion){
+
                     case 1:
+
                         System.out.println("Registrar Ingreso");
                         System.out.println("Tipo 1-Auto 2-Moto 3-Camion");
                         String tipoVe = scanner.nextLine();
+                        if(Integer.parseInt(tipoVe) > 3 || Integer.parseInt(tipoVe) <= 0 ){
+                            throw new IllegalArgumentException("Tipo de vehículo inválido.");
+                        }
 
                         System.out.println("Patente:");
                         String patente = scanner.nextLine();
@@ -43,18 +48,13 @@ public class Main {
                         int horas = Integer.parseInt(scanner.nextLine());
 
                         Vehiculo nuevoVehiculo = null;
-                        if (tipoVe.equals("1")){
-                            nuevoVehiculo = new Auto(modelo, marca, patente, horas);
-                        }else if (tipoVe.equals("2")) {
-                            nuevoVehiculo = new Moto(modelo, marca, patente, horas);
-                        } else if (tipoVe.equals("3")) {
-                            nuevoVehiculo = new Camion(modelo, marca, patente, horas);
-                        }else {
-                            System.out.println("Tipo de Vehiculo Invalido.");
+                        switch (tipoVe) {
+                            case "1" -> nuevoVehiculo = new Auto(modelo, marca, patente, horas);
+                            case "2" -> nuevoVehiculo = new Moto(modelo, marca, patente, horas);
+                            case "3" -> nuevoVehiculo = new Camion(modelo, marca, patente, horas);
+                            default -> throw new IllegalArgumentException("Tipo de vehículo inválido.");
                         }
-                        if (nuevoVehiculo != null){
-                            garage.ingresarVehiculo(nuevoVehiculo);
-                        }
+                        garage.ingresarVehiculo(nuevoVehiculo);
                         break;
 
                     case 2:
