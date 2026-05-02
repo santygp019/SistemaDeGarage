@@ -33,6 +33,8 @@ public class Garage {
     }
 
 
+
+
     public Vehiculo buscarVehiculoPorPatente(String patente){
         for (Vehiculo vehiculo : listaVehiculos){
             if(vehiculo.getPatente().equalsIgnoreCase(patente)){
@@ -56,14 +58,17 @@ public class Garage {
         System.out.println("Vehiculo ingresado con exito ");
     }
 
-    public void  egresoVehiculo(Vehiculo vehiculo) throws VehiculoNoEncontradoException {
-        if (!listaVehiculos.contains(vehiculo)) {
-            throw new VehiculoNoEncontradoException("El vehículo con patente " + vehiculo.getPatente() + " no está en el garage.");
+    public void egresoVehiculo(String patente) throws VehiculoNoEncontradoException {
+        Vehiculo vehiculo = buscarVehiculoPorPatente(patente);
+        if (vehiculo == null) {
+            throw new VehiculoNoEncontradoException("El vehículo con patente " + patente + " no está en el garage.");
         }
+
           listaVehiculos.remove(vehiculo);
         System.out.println("Resumen de salida");
         vehiculo.mostrarInfo();
         System.out.println("Vehiculo egresado con exito ");
+
       }
 
       public void listarVehiculos(){
@@ -85,5 +90,34 @@ public class Garage {
         System.out.println("Espacio Disponible: " + getEspacioDisponible());
         System.out.println("Cantidad de Vehiculos: " + listaVehiculos.size());
     }
+
+    public  void reporteVehiculo(){
+        int moto = 0 , auto = 0 , camion = 0;
+        double recaudacionTotalEstimada = 0;
+
+        for (Vehiculo vehiculo : listaVehiculos){
+            recaudacionTotalEstimada += vehiculo.calcularTarifa();
+            switch (vehiculo.getTipoVehiculo()){
+                case "moto" :
+                    moto++;
+                    break;
+                case "auto" :
+                    auto++;
+                    break;
+                case "camion" :
+                    camion++;
+                    break;
+            }
+        }
+
+
+
+        System.out.println("Cantidad de Vehiculos: " + listaVehiculos.size());
+        System.out.println("Por tipo  Motos: " + moto + " Autos: " + auto + " Camiones: " + camion);
+        System.out.println("Espacio ocupado " + getEspacioTotalOcupado());
+        System.out.println("Espacio disponible " + getEspacioDisponible());
+        System.out.println("Recaudacion estimada " + recaudacionTotalEstimada);
+    }
+
     }
 

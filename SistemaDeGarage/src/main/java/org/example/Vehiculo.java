@@ -4,9 +4,9 @@ public abstract class Vehiculo implements Calculable, Mostrable {
     private String marca;
     private String modelo;
     private String patente;
-    private double horasEstimadas;
+    private int horasEstimadas;
 
-    public Vehiculo(String modelo, String marca, String patente, double horasEstimadas) {
+    public Vehiculo(String modelo, String marca, String patente, int horasEstimadas) {
         this.modelo = modelo;
         this.marca = marca;
         this.patente = patente;
@@ -25,11 +25,11 @@ public abstract class Vehiculo implements Calculable, Mostrable {
         return patente;
     }
 
-    public double getHorasEstimadas() {
+    public int getHorasEstimadas() {
         return horasEstimadas;
     }
 
-    public void setHorasEstimadas(double horasEstimadas) {
+    public void setHorasEstimadas(int horasEstimadas) {
         this.horasEstimadas = horasEstimadas;
     }
 

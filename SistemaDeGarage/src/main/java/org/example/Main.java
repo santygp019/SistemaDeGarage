@@ -1,6 +1,7 @@
 package org.example;
 
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -21,11 +22,7 @@ public class Main {
 
             try{
                 opcion = Integer.parseInt(scanner.nextLine());
-                /*
-                no esta terminado,
-                me faltarian 6 casos de switch, tengo una idea si me lo quieren dejar.
-                chilling
-                */
+
                 switch (opcion){
                     case 1:
                         System.out.println("Registrar Ingreso");
@@ -43,7 +40,7 @@ public class Main {
                         String modelo = scanner.nextLine();
 
                         System.out.println("Horas Estimadas: ");
-                        double horas = Double.parseDouble(scanner.nextLine());
+                        int horas = Integer.parseInt(scanner.nextLine());
 
                         Vehiculo nuevoVehiculo = null;
                         if (tipoVe.equals(1)){
@@ -54,11 +51,44 @@ public class Main {
                             nuevoVehiculo = new Camion(modelo, marca, patente, horas);
                         }else {
                             System.out.println("Tipo de Vehiculo Invalido.");
-                            break;
                         }
+                        break;
+
+                    case 2:
+                        System.out.println("\n--- Registrar Salida ---");
+                        System.out.print("Ingrese la patente del vehículo que sale: ");
+                        String patSalida = scanner.nextLine();
+                        garage.egresoVehiculo(patSalida);
+                        break;
+                    case 3 :
+                        garage.listarVehiculos();
+                        break;
+                    case 4:
+                        garage.estadoGarage();
+                        break;
+                    case 5:
+                        garage.reporteVehiculo();
+                        break;
+                    case 6:
+                        System.out.println("Salir del Programa");
+                        break;
+
+                    default:
+                        System.out.println("Opciones no valida, intente nuevamente ");
+                    }
+                }catch (NumberFormatException e){
+                System.out.println("Error dato incorrecto, debe ingresar un valor numerico valido " +e);
+            }
+                catch (IllegalArgumentException e){
+                    System.out.println("Error de validacion " + e.getMessage());
                 }
+                catch (PatenteDuplicadaException | GarageLlenoException | HorasInvalidasException | VehiculoNoEncontradoException e){
+                    System.out.println(e.getMessage());
+                }catch (Exception e ){
+                System.out.println("Ocurrio un error y hasta aca llegamos!");
+            }
             }
         }
 
     }
-}
+

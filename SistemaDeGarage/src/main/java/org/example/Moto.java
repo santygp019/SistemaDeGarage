@@ -2,7 +2,7 @@ package org.example;
 
 public class Moto extends Vehiculo {
 
-    public Moto(String modelo, String marca, String patente, double horasEstimadas) {
+    public Moto(String modelo, String marca, String patente, int horasEstimadas) {
         super(modelo, marca, patente, horasEstimadas);
     }
 
