@@ -1,6 +1,6 @@
 package org.example;
 
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Calculable, Mostrable {
     private String marca;
     private String modelo;
     private String patente;
@@ -40,7 +40,8 @@ public abstract class Vehiculo {
     public String getTipoVehiculo(){return getClass().getSimpleName();}
 
     public abstract double calcularTarifa();
-    public void mostrarinfo(){
+
+    public void mostrarInfo(){
         System.out.println("Tipo: " + getTipoVehiculo());
         System.out.println("Patente: " + getPatente());
         System.out.println("Marca: " + getMarca());
