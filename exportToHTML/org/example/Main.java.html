@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">example</span><span class="s2">;</span>
+
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+    <span class="s0">static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s1">Garage garage </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Garage</span><span class="s2">(</span><span class="s3">500</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">opcion </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+
+        <span class="s0">while</span><span class="s2">(</span><span class="s1">opcion </span><span class="s2">!= </span><span class="s3">6</span><span class="s2">){</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Bienvenido al Sistema de Garage&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;1. Registrar ingreso&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;2. Registrar salida&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;3. Listar vehículos&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;4. Estado del garage&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;5. Reportes&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;6. Salir&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Seleccione una opción: &quot;</span><span class="s2">);</span>
+
+            <span class="s0">try</span><span class="s2">{</span>
+                <span class="s1">opcion </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">());</span>
+                <span class="s5">/* 
+                no esta terminado, 
+                me faltarian 6 casos de switch, tengo una idea si me lo quieren dejar. 
+                chilling 
+                */</span>
+                <span class="s0">switch </span><span class="s2">(</span><span class="s1">opcion</span><span class="s2">){</span>
+                    <span class="s0">case </span><span class="s3">1</span><span class="s2">:</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Registrar Ingreso&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Tipo 1-Auto 2-Moto 3-Camion&quot;</span><span class="s2">);</span>
+                        <span class="s1">String tipoVe </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Patente:&quot;</span><span class="s2">);</span>
+                        <span class="s1">String patente </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                        <span class="s0">if </span><span class="s2">(</span><span class="s1">patente</span><span class="s2">.</span><span class="s1">trim</span><span class="s2">().</span><span class="s1">isEmpty</span><span class="s2">()) </span><span class="s0">throw new </span><span class="s1">IllegalArgumentException</span><span class="s2">(</span><span class="s4">&quot;La patente no puede estar vacía.&quot;</span><span class="s2">);</span>
+
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Marca: &quot;</span><span class="s2">);</span>
+                        <span class="s1">String marca </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Modelo: &quot;</span><span class="s2">);</span>
+                        <span class="s1">String modelo </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Horas Estimadas: &quot;</span><span class="s2">);</span>
+                        <span class="s0">double </span><span class="s1">horas </span><span class="s2">= </span><span class="s1">Double</span><span class="s2">.</span><span class="s1">parseDouble</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">());</span>
+
+                        <span class="s1">Vehiculo nuevoVehiculo </span><span class="s2">= </span><span class="s0">null</span><span class="s2">;</span>
+                        <span class="s0">if </span><span class="s2">(</span><span class="s1">tipoVe</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s3">1</span><span class="s2">)){</span>
+                            <span class="s1">nuevoVehiculo </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Auto</span><span class="s2">(</span><span class="s1">modelo</span><span class="s2">, </span><span class="s1">marca</span><span class="s2">, </span><span class="s1">patente</span><span class="s2">, </span><span class="s1">horas</span><span class="s2">);</span>
+                        <span class="s2">}</span><span class="s0">else if </span><span class="s2">(</span><span class="s1">tipoVe</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;2&quot;</span><span class="s2">)) {</span>
+                            <span class="s1">nuevoVehiculo </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Moto</span><span class="s2">(</span><span class="s1">modelo</span><span class="s2">, </span><span class="s1">marca</span><span class="s2">, </span><span class="s1">patente</span><span class="s2">, </span><span class="s1">horas</span><span class="s2">);</span>
+                        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">tipoVe</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;3&quot;</span><span class="s2">)) {</span>
+                            <span class="s1">nuevoVehiculo </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Camion</span><span class="s2">(</span><span class="s1">modelo</span><span class="s2">, </span><span class="s1">marca</span><span class="s2">, </span><span class="s1">patente</span><span class="s2">, </span><span class="s1">horas</span><span class="s2">);</span>
+                        <span class="s2">}</span><span class="s0">else </span><span class="s2">{</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Tipo de Vehiculo Invalido.&quot;</span><span class="s2">);</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s2">}</span>
+                <span class="s2">}</span>
+
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

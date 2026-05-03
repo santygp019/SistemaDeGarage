@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Auto.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Auto.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">example</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Auto </span><span class="s0">extends </span><span class="s1">Vehiculo </span><span class="s2">{</span>
+
+    <span class="s0">public </span><span class="s1">Auto</span><span class="s2">(</span><span class="s1">String modelo</span><span class="s2">, </span><span class="s1">String marca</span><span class="s2">, </span><span class="s1">String patente</span><span class="s2">,</span><span class="s0">double </span><span class="s1">horasEstimadas</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">(</span><span class="s1">modelo</span><span class="s2">, </span><span class="s1">marca</span><span class="s2">, </span><span class="s1">patente</span><span class="s2">, </span><span class="s1">horasEstimadas</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+
+    <span class="s1">@Override</span>
+    <span class="s0">public double </span><span class="s1">calcularCosto</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s3">1000</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public int </span><span class="s1">getEspacioOcupado</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s3">2</span><span class="s2">;</span>
+
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String getTipoVehiculo</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s4">&quot;Auto&quot;</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public double </span><span class="s1">calcularTarifa</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">getHorasEstimadas</span><span class="s2">() * </span><span class="s1">calcularCosto</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
