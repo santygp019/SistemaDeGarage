@@ -21,9 +21,4 @@ public class Moto extends Vehiculo {
         return "Moto";
     }
 
-    @Override
-    public double calcularTarifa() {
-        return getHorasEstimadas() * calcularCosto();
-    }
-
 }

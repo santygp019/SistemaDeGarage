@@ -23,8 +23,4 @@ public class Auto extends Vehiculo {
         return "Auto";
     }
 
-    @Override
-    public double calcularTarifa() {
-        return getHorasEstimadas() * calcularCosto();
-    }
 }

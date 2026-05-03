@@ -22,10 +22,5 @@ public class Camion extends Vehiculo{
         return "Camion";
     }
 
-    @Override
-    public double calcularTarifa() {
-        return getHorasEstimadas() * calcularCosto();
-    }
-
 
 }

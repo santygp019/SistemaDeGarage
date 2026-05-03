@@ -97,7 +97,7 @@ public class Garage {
 
         for (Vehiculo vehiculo : listaVehiculos){
             recaudacionTotalEstimada += vehiculo.calcularTarifa();
-            switch (vehiculo.getTipoVehiculo()){
+            switch (vehiculo.getTipoVehiculo().toLowerCase()){
                 case "moto" :
                     moto++;
                     break;

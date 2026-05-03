@@ -39,8 +39,9 @@ public abstract class Vehiculo implements Calculable, Mostrable {
 
     public String getTipoVehiculo(){return getClass().getSimpleName();}
 
-    public abstract double calcularTarifa();
-
+    public double calcularTarifa() {
+        return getHorasEstimadas() * calcularCosto();
+    }
     public void mostrarInfo(){
         System.out.println("Tipo: " + getTipoVehiculo());
         System.out.println("Patente: " + getPatente());

@@ -40,9 +40,11 @@ public class Main {
 
                         System.out.print("Marca: ");
                         String marca = scanner.nextLine();
+                        if (marca.trim().isEmpty()) throw new IllegalArgumentException("La marca es obligatoria.");
 
                         System.out.print("Modelo: ");
                         String modelo = scanner.nextLine();
+                        if (modelo.trim().isEmpty()) throw new IllegalArgumentException("El modelo es obligatorio.");
 
                         System.out.println("Horas Estimadas: ");
                         int horas = Integer.parseInt(scanner.nextLine());
@@ -78,20 +80,19 @@ public class Main {
 
                     default:
                         System.out.println("Opciones no valida, intente nuevamente ");
-                    }
-                }catch (NumberFormatException e){
+                }
+            }catch (NumberFormatException e){
                 System.out.println("Error dato incorrecto, debe ingresar un valor numerico valido " +e);
             }
-                catch (IllegalArgumentException e){
-                    System.out.println("Error de validacion " + e.getMessage());
-                }
-                catch (PatenteDuplicadaException | GarageLlenoException | HorasInvalidasException | VehiculoNoEncontradoException e){
-                    System.out.println(e.getMessage());
-                }catch (Exception e ){
+            catch (IllegalArgumentException e){
+                System.out.println("Error de validacion " + e.getMessage());
+            }
+            catch (PatenteDuplicadaException | GarageLlenoException | HorasInvalidasException | VehiculoNoEncontradoException e){
+                System.out.println(e.getMessage());
+            }catch (Exception e ){
                 System.out.println("Ocurrio un error y hasta aca llegamos!");
             }
-            }
         }
-
     }
 
+}
