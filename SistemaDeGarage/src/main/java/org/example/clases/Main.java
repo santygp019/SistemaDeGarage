@@ -1,7 +1,11 @@
-package org.example;
+package org.example.clases;
 
 
-import java.sql.SQLOutput;
+import org.example.excepciones.GarageLlenoException;
+import org.example.excepciones.HorasInvalidasException;
+import org.example.excepciones.PatenteDuplicadaException;
+import org.example.excepciones.VehiculoNoEncontradoException;
+
 import java.util.Scanner;
 
 public class Main {
@@ -87,7 +91,8 @@ public class Main {
             catch (IllegalArgumentException e){
                 System.out.println("Error de validacion " + e.getMessage());
             }
-            catch (PatenteDuplicadaException | GarageLlenoException | HorasInvalidasException | VehiculoNoEncontradoException e){
+            catch (PatenteDuplicadaException | GarageLlenoException | HorasInvalidasException |
+                   VehiculoNoEncontradoException e){
                 System.out.println(e.getMessage());
             }catch (Exception e ){
                 System.out.println("Ocurrio un error y hasta aca llegamos!");

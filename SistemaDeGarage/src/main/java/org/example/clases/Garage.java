@@ -1,4 +1,9 @@
-package org.example;
+package org.example.clases;
+
+import org.example.excepciones.GarageLlenoException;
+import org.example.excepciones.HorasInvalidasException;
+import org.example.excepciones.PatenteDuplicadaException;
+import org.example.excepciones.VehiculoNoEncontradoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,14 +102,14 @@ public class Garage {
 
         for (Vehiculo vehiculo : listaVehiculos){
             recaudacionTotalEstimada += vehiculo.calcularTarifa();
-            switch (vehiculo.getTipoVehiculo().toLowerCase()){
-                case "moto" :
+            switch (vehiculo.getTipoVehiculo()){
+                case "Moto" :
                     moto++;
                     break;
-                case "auto" :
+                case "Auto" :
                     auto++;
                     break;
-                case "camion" :
+                case "Camion" :
                     camion++;
                     break;
             }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.excepciones;
 
 public class GarageLlenoException extends RuntimeException {
     public GarageLlenoException(String message) {
