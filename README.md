@@ -57,3 +57,20 @@ Esto permite un manejo más semántico y claro de los errores de negocio.
 - **Control de Versiones**: Git + GitHub
 
 ## 📁 Estructura del Proyecto
+
+/SistemaDeGarage
+├── src/main/java/org/example/
+│   ├── clases/
+│   │   ├── Vehiculo.java (abstracta)
+│   │   ├── Moto.java
+│   │   ├── Auto.java
+│   │   ├── Camion.java
+│   │   ├── Garage.java
+│   │   └── Main.java
+│   ├── interfaces/
+│   │   ├── Calculable.java
+│   │   └── Mostrable.java
+│   └── excepciones/
+├── docs/                  ← Documentación UML (PDF)
+├── README.md
+└── pom.xml
